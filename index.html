@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <meta http-equiv="x-ua-compatible" content="IE=edge">
+      <title>Login</title>
+      <link href="css/cssBundles.css" rel="stylesheet">
+      <link rel="SHORTCUT ICON" href="img/icon.png">
+   </head>
+   <body>
+      <div class="up01_2014">
+         <div class="header">
+            <div class="top_bar"></div>
+            <div class="center">
+               <div class="box_logo">
+                  <a href="">
+                  <img src="img/logo.png" alt="Logotipo" width="117" height="51"></a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="main" class="login">
+         <div class="section center">
+            <h2><span class="sprite"></span>Login</h2>
+            <div class="conteudo">
+               <div class="box conta">
+                  <h3>Entrar com a sua conta Level Up</h3>
+                  <form action="login-auth.php" class="form-horizontal" method="post" novalidate="novalidate">
+                     <fieldset>
+                        <div class="entrar-conta">
+                           <legend>Fazer o login</legend>
+                           <div class="control-group">
+                              <label class="control-label">Login ou Email da Conta Level Up</label>
+                              <div class="controls">
+                                 <input class="input-largexx" data-val="true" data-val-required="Campo obrigatório" id="Username" maxlength="100" name="Username" type="text" value="">
+                                 <label class="erro"><span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true"></span></label>
+                              </div>
+                           </div>
+                           <div class="control-group">
+                              <label class="control-label">Senha</label>
+                              <div class="controls">
+                                 <input class="input-largexx" data-val="true" data-val-required="Campo obrigatório" id="Password" maxlength="24" name="Password" type="password" value="">
+                                 <label class="erro"><span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span></label>
+                              </div>
+                           </div>
+                           <label style="color: red;"></label>
+                           <p class="aviso">Informe sua senha para continuar</p>
+                           <div class="control-captcha">
+                           </div>
+                        </div>
+                        <input type="submit" value="Entrar" class="btn">
+                     </fieldset>
+                  </form>
+                  <ul>
+                     <li class="first"><a href="https://minhaconta.levelupgames.com.br/web/criar-conta"><span></span>Criar uma conta Level Up</a></li>
+                     <li class=""><a href="https://minhaconta.levelupgames.com.br/web/esqueci-senha-conta"><span></span>Esqueci minha senha</a></li>
+                  </ul>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+      <div id="footer" style="position: relative; bottom: auto;">
+         <div class="section">
+            <img src="img/icn-site_seguro.png" alt="Site seguro" class="securesite" height="42" width="125">
+            <p class="copyright">© 2016, Level Up! Interactive S.A. TODOS OS DIREITOS RESERVADOS.</p>
+            <a href="http://centraldesuporte.levelup.com.br/" class="supportcenter" target="_blank">central de suporte</a>
+         </div>
+      </div>
+      <script src="js/jquery.js"></script>
+      <script src="js/jqueryval.js"></script>
+      <script type="text/javascript">
+         $('#Username').alphanumeric({ ichars: "°¹²³£¢¬¨§ºª↕♂ó¤ƒÆ!#$%^&*()+=[]\\\';,/{}|\":<>?~` " });
+         
+         $(function() {
+             $('#Username').focus();
+         });
+      </script>
+      <script src="js/api.js"></script>
+      <script type="text/javascript">
+         //var _mfq = _mfq || [];
+         //(function() {
+         //    var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+         //    mf.src = "//cdn.mouseflow.com/projects/08017b9a-fe69-4a0e-9ad6-2dfb43d12948.js";
+         //    document.getElementsByTagName("head")[0].appendChild(mf);
+         //})();
+         
+         function footerPosition() {
+         
+             var heightFull = $('.header').height() + $('#main').height() + $('#footer').height() + 80;
+             
+             if (heightFull < $(window).height()) {
+                 $('#footer').css({
+                     position: 'fixed',
+                     bottom: 0
+                 });
+             } else {
+                 $('#footer').css({
+                     position: 'relative',
+                     bottom: 'auto'
+                 });
+             }
+         }
+         
+         $(document).ready(function () {
+             footerPosition();
+         });
+         
+         $(window).resize(function() {
+             footerPosition();
+         });
+         
+      </script>
+   </body>
+</html>
